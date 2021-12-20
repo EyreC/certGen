@@ -1,0 +1,23 @@
+﻿@page
+@model RazorTutorial.Pages.UploadModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<form enctype="multipart/form-data" method="post">
+    <dl>
+        <dt>
+            <label asp-for="ExcelWithNames.FormFile">Excel With Name</label>
+        </dt>
+        <dd>
+            <input asp-for="ExcelWithNames.FormFile" type="file">
+            <span asp-validation-for="ExcelWithNames.FormFile"></span>
+        </dd>
+        <dt>
+            <label asp-for="PdfTemplate.FormFile">Pdf Certificate Template</label>
+        </dt>
+        <dd>
+            <input asp-for="PdfTemplate.FormFile" type="file">
+            <span asp-validation-for="PdfTemplate.FormFile"></span>
+        </dd>
+    </dl>
+    <input asp-page-handler="Upload" class="btn-secondary" type="submit" value="Generate Certs" />
+</form>
